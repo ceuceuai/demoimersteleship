@@ -1,0 +1,1294 @@
+ChatGPT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Invite team members
+
+ok gue udah jadi nih..aplikasinya , tapi kenapa ya , pas klik menu produk kami itu gak muncul feedback dari bot nya - gue ada file itu 6 file gs dan 1 html
+
+
+Pasted code.js
+JavaScript
+
+140978d8-9dd6-48a0-9190-d3c311f96b8a.png
+6fcbb750-6ca1-46ff-8fcb-e5cf31db4209.png
+ini kenapa lopping terus ya mau di tempat telegram bot , dan gue tes di telegram lain juga sama
+
+gue udah pasnag ini sih, udah gue klik - terus kenapa itu terjadi ya
+
+Thought for 1m 53s
+Bisa bro. Gue sudah buatin versi HTML full panduan lengkap iMersTeleShip dengan konsep visual yang selaras sales page: dark gradient, kartu-kartu section, step-by-step, checklist, troubleshooting, dan responsive mobile.
+
+Isinya sudah gue tambahin jadi lebih lengkap:
+
+Pengenalan sistem iMersTeleShip
+
+Persiapan BotFather dan Admin ID
+
+Instalasi Google Sheets
+
+Setup database awal
+
+Deploy Apps Script Web App
+
+Dashboard Admin
+
+Bedah menu add-on
+
+Manajemen produk
+
+Alur order dan pembayaran manual
+
+Menu admin Telegram
+
+Custom branding / white-label
+
+Keamanan token bot
+
+Troubleshooting bot diam, looping, webhook 302, 403, pending update
+
+Checklist final sebelum dijual
+
+Rekomendasi alur demo untuk pembeli
+
+File HTML-nya bisa langsung lo buka, edit, atau upload ke hosting/Vercel:
+
+Download HTML Panduan Lengkap iMersTeleShip
+
+
+
+lo tahu salespgae gue kan - kaya gitu warna dan fontsnya bro
+
+Thought for 1m 29s
+Iya bro, yang tadi masih terlalu “guide/documentation style”.
+
+Gue revisi jadi lebih nyambung ke konsep salespage iMers: dark gradient, ungu–cyan–pink, aksen kuning, font Poppins, card glassmorphism, heading lebih bold, tombol lebih landing-page look.
+
+Download versi revisinya di sini:
+
+Download HTML Panduan iMersTeleShip - Salespage Style
+
+
+
+1a67bd45-b2df-4101-9661-ed1a4bfa6958.png
+nih gue kasih foto salespagena 
+
+Thought for 1m 51s
+Iya bro, sekarang jelas. Style salespage lo itu bukan dark, tapi clean pastel SaaS landing page:
+
+Background putih kebiruan dengan gradient pastel biru, hijau mint, ungu muda
+
+Font model Poppins / bold rounded
+
+Heading hitam navy, highlight biru–ungu
+
+Card putih rounded besar
+
+Shadow lembut
+
+CTA biru
+
+Section lebar, minimalis, rapi
+
+Gue sudah buatin ulang versi panduannya biar selaras sama screenshot salespage lo.
+
+Download di sini:
+
+Download Panduan iMersTeleShip - Style Salespage Fix
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buku Panduan Lengkap iMersTeleShip</title>
+  <meta name="description" content="Panduan lengkap instalasi, setup, deploy, konfigurasi, dan troubleshooting iMersTeleShip." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #2496ff;
+      --blue-2: #237bff;
+      --purple: #7d46ff;
+      --cyan: #44d9ff;
+      --mint: #dffdf2;
+      --pink: #f5e4ff;
+      --yellow: #ffd86b;
+      --dark: #1e293b;
+      --muted: #64748b;
+      --soft: #f8fbff;
+      --white: #ffffff;
+      --border: rgba(30, 41, 59, .08);
+      --shadow: 0 22px 55px rgba(30, 41, 59, .10);
+      --shadow-soft: 0 14px 35px rgba(30, 41, 59, .08);
+      --radius-lg: 34px;
+      --radius-md: 24px;
+      --radius-sm: 16px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--dark);
+      background:
+        radial-gradient(circle at 10% 4%, rgba(36,150,255,.22), transparent 32%),
+        radial-gradient(circle at 91% 7%, rgba(255,216,107,.45), transparent 18%),
+        linear-gradient(180deg, #f6fbff 0%, #f5fbff 38%, #f8fbff 100%);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto auto 14% -12%;
+      width: 46vw;
+      height: 46vw;
+      min-width: 380px;
+      min-height: 380px;
+      background: radial-gradient(circle, rgba(68,217,255,.24), transparent 65%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body::after {
+      inset: 18% -18% auto auto;
+      background: radial-gradient(circle, rgba(125,70,255,.16), transparent 65%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page-band {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 430px;
+      z-index: -2;
+      opacity: .9;
+      background: linear-gradient(90deg, rgba(200,239,255,.75), rgba(229,255,243,.75), rgba(245,225,255,.75));
+    }
+
+    .band-1 { top: 560px; }
+    .band-2 { top: 1780px; }
+    .band-3 { top: 3050px; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(248, 251, 255, .72);
+      border-bottom: 1px solid rgba(255,255,255,.55);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: #0f2a43;
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 10px 22px rgba(36,150,255,.28);
+      background: linear-gradient(135deg, var(--cyan), var(--blue-2));
+    }
+
+    .brand b { color: var(--blue); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #24364d;
+    }
+
+    .nav-links a { opacity: .86; }
+    .nav-links a:hover { color: var(--blue); opacity: 1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 14px 28px rgba(36, 150, 255, .26);
+    }
+
+    .btn-light {
+      color: #23324a;
+      background: #fff;
+      border-color: rgba(30,41,59,.08);
+      box-shadow: 0 10px 24px rgba(30,41,59,.08);
+    }
+
+    .hero {
+      padding: 78px 0 86px;
+      text-align: center;
+    }
+
+    .badge {
+      width: fit-content;
+      margin: 0 auto 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(36,150,255,.12);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(36,150,255,.08);
+    }
+
+    .badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 5px rgba(68,217,255,.12);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 900px;
+      margin-inline: auto;
+      margin-bottom: 24px;
+      font-size: clamp(40px, 6.2vw, 76px);
+      line-height: .98;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+      color: #1d2b3d;
+    }
+
+    .gradient-text {
+      display: block;
+      background: linear-gradient(90deg, var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 730px;
+      margin: 0 auto 28px;
+      color: #56657b;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 54px;
+    }
+
+    .mockup {
+      width: min(620px, 100%);
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .mockup-inner {
+      min-height: 170px;
+      display: grid;
+      grid-template-columns: .9fr 1.25fr;
+      gap: 18px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(30,41,59,.07);
+    }
+
+    .mock-sidebar {
+      border-right: 1px solid rgba(30,41,59,.06);
+      padding-right: 16px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .mock-label {
+      text-align: left;
+      font-size: 11px;
+      color: var(--blue);
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .mock-line {
+      height: 25px;
+      border-radius: 7px;
+      background: #f1f5f9;
+    }
+
+    .mock-content {
+      display: grid;
+      align-content: center;
+      gap: 12px;
+    }
+
+    .mock-avatar {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .avatar {
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+    }
+
+    .mock-small-line {
+      width: 135px;
+      height: 10px;
+      border-radius: 20px;
+      background: #e8eef6;
+      box-shadow: 0 18px 0 #f1f5f9;
+    }
+
+    .mock-button {
+      margin-top: 22px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 11px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 12px 20px rgba(36,150,255,.24);
+    }
+
+    section { padding: 72px 0; }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(29px, 4vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      color: #223149;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .grid-4, .grid-3, .grid-2 {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(255,255,255,.88);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .feature-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 18px;
+    }
+
+    .icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      font-size: 19px;
+      background: #e9f7ff;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .icon.mint { background: #e7fff5; color: #10b981; }
+    .icon.pink { background: #fff1f4; color: #ff4f75; }
+    .icon.purple { background: #f3eaff; color: var(--purple); }
+    .icon.yellow { background: #fff8df; color: #d99b00; }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.28;
+      letter-spacing: -.035em;
+      font-weight: 900;
+    }
+
+    .card p, .card li {
+      color: #617086;
+      font-size: 14px;
+      line-height: 1.75;
+      font-weight: 500;
+    }
+
+    .card p { margin-bottom: 0; }
+
+    .dark-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 48px;
+      background:
+        radial-gradient(circle at 5% 100%, rgba(125,70,255,.26), transparent 36%),
+        linear-gradient(135deg, #111827, #172033 68%, #0e1624);
+      color: #fff;
+      box-shadow: 0 32px 70px rgba(15,23,42,.28);
+    }
+
+    .dark-panel .eyebrow { color: #7dd3fc; }
+    .dark-panel h2 { color: #fff; }
+    .dark-panel p { color: #cbd5e1; }
+
+    .dark-grid {
+      display: grid;
+      grid-template-columns: 1fr .95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .mini-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .mini-card {
+      border-radius: 18px;
+      padding: 22px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .mini-card h3 {
+      color: #fff;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .step-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      box-shadow: 0 12px 22px rgba(36,150,255,.2);
+      margin-bottom: 18px;
+    }
+
+    .code-box {
+      margin: 16px 0 0;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #0f172a;
+      color: #dbeafe;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.55;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    .list-clean {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .list-clean li {
+      position: relative;
+      padding-left: 28px;
+      color: #59687e;
+    }
+
+    .list-clean li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #10b981;
+      background: #dcfce7;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .warning {
+      background: #fff8e8;
+      border: 1px solid rgba(245,158,11,.18);
+    }
+
+    .danger {
+      background: #fff4f4;
+      border: 1px solid rgba(239,68,68,.14);
+    }
+
+    .success {
+      background: #f1fff8;
+      border: 1px solid rgba(16,185,129,.14);
+    }
+
+    .wide-card {
+      border-radius: 32px;
+      padding: 38px;
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.95);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .price-card {
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(30,41,59,.08);
+      box-shadow: 0 18px 34px rgba(30,41,59,.10);
+    }
+
+    .price-card .old {
+      color: #9aa7b8;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: line-through;
+    }
+
+    .price-card .price {
+      margin: 4px 0 20px;
+      font-size: 47px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .price-card .price small {
+      font-size: 19px;
+      letter-spacing: -.03em;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 20px 22px;
+      border-bottom: 1px solid rgba(30,41,59,.08);
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    th {
+      color: #20314a;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      background: #f1f7ff;
+    }
+
+    td:first-child {
+      font-weight: 800;
+      color: #223149;
+    }
+
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+
+    details {
+      border-radius: 20px;
+      padding: 0;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.95);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 22px 26px;
+      cursor: pointer;
+      font-weight: 900;
+      color: #223149;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      color: var(--blue);
+      background: #eaf6ff;
+      flex: 0 0 auto;
+    }
+
+    details[open] summary::after { content: "−"; }
+
+    details .answer {
+      padding: 0 26px 24px;
+      color: #617086;
+      line-height: 1.8;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .footer {
+      padding: 42px 0;
+      border-top: 1px solid rgba(30,41,59,.06);
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-link {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 30;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      box-shadow: 0 16px 28px rgba(36,150,255,.22);
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .dark-grid, .split { grid-template-columns: 1fr; }
+      .dark-panel { padding: 36px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .nav { height: 68px; }
+      .brand { font-size: 15px; }
+      .brand-icon { width: 30px; height: 30px; }
+      .hero { padding: 58px 0 64px; }
+      h1 { font-size: 44px; }
+      .hero-subtitle { font-size: 14px; }
+      .hero-actions .btn { width: 100%; }
+      .mockup { padding: 12px; border-radius: 24px; }
+      .mockup-inner { grid-template-columns: 1fr; }
+      .mock-sidebar { border-right: 0; border-bottom: 1px solid rgba(30,41,59,.06); padding-right: 0; padding-bottom: 16px; }
+      section { padding: 52px 0; }
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .card, .wide-card, .dark-panel { border-radius: 24px; padding: 24px; }
+      .feature-card { min-height: auto; }
+      .price-card .price { font-size: 39px; }
+      .footer .container { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="page-band band-1"></div>
+  <div class="page-band band-2"></div>
+  <div class="page-band band-3"></div>
+
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="iMersTeleShip">
+        <span class="brand-icon">✈️</span>
+        <span>iMers<b>TeleShip</b></span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi panduan">
+        <a href="#persiapan">Persiapan</a>
+        <a href="#install">Instalasi</a>
+        <a href="#menu">Menu</a>
+        <a href="#produk">Produk</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+      <a class="btn btn-primary" href="#checklist">Mulai Setup</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">Panduan lengkap toko produk digital di Telegram</div>
+        <h1>Buku Panduan Lengkap <span class="gradient-text">iMersTeleShip</span></h1>
+        <p class="hero-subtitle">
+          Ikuti panduan ini untuk mengubah Google Sheets dan Telegram Bot menjadi sistem checkout produk digital yang rapi, otomatis, dan siap dipakai jualan.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#install">🚀 Mulai Instalasi</a>
+          <a class="btn btn-light" href="#troubleshooting">Lihat Troubleshooting</a>
+        </div>
+
+        <div class="mockup" aria-label="Ilustrasi dashboard bot">
+          <div class="mockup-inner">
+            <div class="mock-sidebar">
+              <div class="mock-label">Bot <span class="mock-line" style="width: 70px; height: 9px;"></span></div>
+              <div class="mock-line"></div>
+              <div class="mock-line"></div>
+              <div class="mock-line"></div>
+            </div>
+            <div class="mock-content">
+              <div class="mock-avatar">
+                <div class="avatar"></div>
+                <div class="mock-small-line"></div>
+              </div>
+              <div class="mock-button">🛒 Checkout Produk Digital</div>
+              <div class="mock-button" style="background:linear-gradient(135deg,#22c55e,#44d9ff);">🔓 Buka Akses Produk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="konsep">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Konsep Sistem</div>
+          <h2>Apa yang Bisa Anda Jalankan dengan iMersTeleShip?</h2>
+          <p>iMersTeleShip dirancang untuk menjual produk digital, membership, kelas online, template, lisensi, dan akses private langsung dari Telegram.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card feature-card">
+            <div class="icon mint">▣</div>
+            <h3>Toko Digital Telegram</h3>
+            <p>Produk tampil di bot, pembeli klik katalog, pilih produk, lalu checkout tanpa harus diarahkan ke sistem rumit.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon pink">◇</div>
+            <h3>Database Google Sheets</h3>
+            <p>Produk, member, order, lisensi, dan pengaturan bot dikelola lewat Google Sheets yang mudah diedit.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon">▤</div>
+            <h3>Pembayaran Manual</h3>
+            <p>Mendukung transfer bank dan QRIS manual. Admin bisa approve atau reject pesanan dari Telegram.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon purple">↯</div>
+            <h3>White-Label Branding</h3>
+            <p>Nama bot, logo, pesan otomatis, copywriting, dan halaman panduan bisa disesuaikan dengan brand Anda sendiri.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="persiapan">
+      <div class="container">
+        <div class="dark-panel">
+          <div class="dark-grid">
+            <div>
+              <div class="eyebrow">Bagian 1 — Persiapan Awal</div>
+              <h2>Siapkan Kunci Utama Sebelum Instalasi</h2>
+              <p>Sebelum menjalankan sistem, Anda perlu membuat bot Telegram dan mengambil Admin ID. Dua data ini akan dipakai agar bot bisa mengirim katalog, menerima order, dan mengirim notifikasi ke admin.</p>
+            </div>
+            <div class="mini-stack">
+              <div class="mini-card">
+                <h3>1. Dapatkan Token Bot</h3>
+                <p>Buka <b>@BotFather</b> di Telegram, ketik <b>/newbot</b>, ikuti instruksi, lalu copy API Token yang diberikan.</p>
+              </div>
+              <div class="mini-card">
+                <h3>2. Dapatkan Admin ID</h3>
+                <p>Buka <b>@userinfobot</b> di Telegram untuk melihat ID angka akun Anda. ID ini dipakai untuk menerima notifikasi order.</p>
+              </div>
+              <div class="mini-card">
+                <h3>3. Gunakan Akun Gmail Pribadi</h3>
+                <p>Disarankan memakai akun <b>@gmail.com</b>, bukan email kantor/kampus, supaya izin Apps Script dan deployment lebih lancar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Bagian 2 — Instalasi & Deployment</div>
+          <h2>Ikuti Urutan Ini Agar Bot Aktif Tanpa Error</h2>
+          <p>Jangan lompat langkah. Urutan yang benar adalah salin template, setup database, deploy web app, lalu aktifkan webhook dari dashboard.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card step-card">
+            <div class="step-num">01</div>
+            <h3>Salin Database Template</h3>
+            <p>Buka link Google Sheets template, lalu klik <b>File → Buat Salinan</b>. Setelah berhasil disalin, gunakan file salinan itu sebagai database utama.</p>
+            <ul class="list-clean">
+              <li>Jangan edit template asli.</li>
+              <li>Pastikan sheet bisa dibuka dengan akun Gmail Anda.</li>
+              <li>Berikan nama file sesuai brand Anda.</li>
+            </ul>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-num">02</div>
+            <h3>Setup Database Awal</h3>
+            <p>Di Google Sheets, klik menu <b>🚀 iMersTeleship App → ⚙️ Setup Database Awal</b>.</p>
+            <ul class="list-clean">
+              <li>Membuat sheet Settings.</li>
+              <li>Membuat sheet Products.</li>
+              <li>Membuat sheet Orders, Members, dan Licenses.</li>
+            </ul>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-num">03</div>
+            <h3>Masukkan Data Dummy</h3>
+            <p>Klik <b>📝 Masukkan Data Dummy</b> agar ada contoh produk. Ini membantu Anda mengetes katalog tanpa input manual dari nol.</p>
+            <ul class="list-clean">
+              <li>Cek format harga.</li>
+              <li>Cek status produk Active/Aktif.</li>
+              <li>Cek tombol beli dan detail produk.</li>
+            </ul>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-num">04</div>
+            <h3>Buka Apps Script</h3>
+            <p>Klik <b>Ekstensi → Apps Script</b>. Pastikan semua file script sudah ada, termasuk Code.gs, Telegram.gs, Payment.gs, Admin.gs, dan Dashboard.html jika tersedia.</p>
+            <ul class="list-clean">
+              <li>Klik Save sebelum deploy.</li>
+              <li>Jalankan authorization jika diminta.</li>
+              <li>Pastikan tidak ada error merah di editor.</li>
+            </ul>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-num">05</div>
+            <h3>Deploy Web App</h3>
+            <p>Klik <b>Deploy → New Deployment → Web App</b>, lalu gunakan konfigurasi berikut:</p>
+            <div class="code-box">Execute as: Me / Saya
+Who has access: Anyone / Siapa saja
+URL yang dipakai: link berakhiran /exec</div>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-num">06</div>
+            <h3>Aktifkan Bot</h3>
+            <p>Buka <b>Dashboard Admin</b> dari menu Sheets, masukkan Token Bot, Admin ID, dan URL Web App /exec, lalu klik <b>Simpan & Aktifkan</b>.</p>
+            <ul class="list-clean">
+              <li>Bot token dari BotFather.</li>
+              <li>Admin ID dari userinfobot.</li>
+              <li>Web App URL dari hasil deploy.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Bagian 3 — Bedah Menu Add-On</div>
+          <h2>Fungsi Menu iMersTeleShip di Google Sheets</h2>
+          <p>Menu ini menjadi pusat kontrol utama untuk dashboard, database, testing, diagnosa, dan emergency reset bot.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Menu</th>
+                <th>Fungsi</th>
+                <th>Kapan Dipakai</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>💻 Buka Dashboard Admin</td>
+                <td>Membuka panel kontrol untuk mengatur API, produk, harga, link akses, sales page, dan teks otomatis.</td>
+                <td>Saat ingin setup bot, tambah produk, atau edit pengaturan.</td>
+              </tr>
+              <tr>
+                <td>🤖 Uji Coba: Ping Bot</td>
+                <td>Mengirim pesan test ke admin untuk memastikan bot bisa mengirim pesan dari Apps Script.</td>
+                <td>Saat ingin cek token dan Admin ID valid atau tidak.</td>
+              </tr>
+              <tr>
+                <td>🛍️ Uji Coba: Katalog Produk</td>
+                <td>Mengirim katalog produk ke Telegram admin untuk melihat tampilan produk.</td>
+                <td>Saat selesai input produk atau edit katalog.</td>
+              </tr>
+              <tr>
+                <td>📡 Diagnosa: Cek Status Webhook</td>
+                <td>Melihat status webhook, pending update, dan error dari server Telegram.</td>
+                <td>Saat bot tidak merespon, delay, atau muncul error 302/403.</td>
+              </tr>
+              <tr>
+                <td>⚙️ Setup Database Awal</td>
+                <td>Membuat struktur tabel sistem secara otomatis di Google Sheets.</td>
+                <td>Saat pertama kali instalasi atau sheet belum lengkap.</td>
+              </tr>
+              <tr>
+                <td>📝 Masukkan Data Dummy</td>
+                <td>Mengisi contoh produk, setting, dan data testing agar sistem langsung bisa dicoba.</td>
+                <td>Saat ingin demo cepat tanpa input manual.</td>
+              </tr>
+              <tr>
+                <td>🛑 Hentikan Spam Bot</td>
+                <td>Mematikan webhook bot sementara. Versi terbaik harus memakai drop_pending_updates agar antrean lama ikut dibuang.</td>
+                <td>Saat bot looping, spam welcome, atau membalas pesan lama.</td>
+              </tr>
+              <tr>
+                <td>🔄 Reset & Bersihkan Antrean Bot</td>
+                <td>Menghapus webhook lama, membuang pending updates, lalu memasang webhook ulang secara bersih.</td>
+                <td>Saat pending_update_count tinggi atau bot memproses antrean lama.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk">
+      <div class="container">
+        <div class="wide-card split">
+          <div>
+            <div class="eyebrow">Bagian 4 — Manajemen Toko</div>
+            <h2>Tambah Produk, Kelola Order, dan Broadcast Member</h2>
+            <p>Setelah bot aktif, Anda bisa mulai memasukkan produk digital dan menjalankan alur transaksi dari Telegram.</p>
+            <ul class="list-clean">
+              <li><b>Tambah Produk:</b> buka Dashboard Admin → tab Produk → isi nama, tipe, harga, deskripsi, link sales page, link file, dan status.</li>
+              <li><b>Kelola Pesanan:</b> ketik <b>/admin</b> di bot Telegram, lalu pilih order pending untuk approve atau reject.</li>
+              <li><b>Broadcast:</b> ketik <b>/admin</b> → Broadcast, lalu kirim pesan promosi ke seluruh member bot.</li>
+              <li><b>Deep Link Produk:</b> gunakan link checkout otomatis untuk dipasang di landing page, CTA, bio, atau halaman produk.</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <div class="old">Mode manual ribet</div>
+            <div class="price">Auto<span class="gradient-text" style="display:inline;">Pilot</span></div>
+            <a class="btn btn-primary" href="#checklist">Cek Checklist Setup</a>
+            <p style="margin-top:16px;">Satu sistem untuk produk, order, member, lisensi, dan notifikasi Telegram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="alur">
+      <div class="container">
+        <div class="dark-panel">
+          <div class="dark-grid">
+            <div>
+              <div class="eyebrow">Alur Order</div>
+              <h2>Bagaimana Pembeli Mendapat Akses Produk?</h2>
+              <p>iMersTeleShip menggunakan alur sederhana agar pembeli tidak bingung dan admin tetap punya kontrol penuh atas pembayaran manual.</p>
+            </div>
+            <div class="mini-stack">
+              <div class="mini-card">
+                <h3>1. Pembeli klik Produk Kami</h3>
+                <p>Bot menampilkan katalog produk aktif dari sheet Products.</p>
+              </div>
+              <div class="mini-card">
+                <h3>2. Pembeli klik Beli</h3>
+                <p>Bot menampilkan pilihan transfer bank manual atau QRIS manual.</p>
+              </div>
+              <div class="mini-card">
+                <h3>3. Pembeli upload bukti</h3>
+                <p>Bukti transfer diteruskan ke admin, lalu order masuk sebagai PENDING.</p>
+              </div>
+              <div class="mini-card">
+                <h3>4. Admin approve order</h3>
+                <p>Setelah approve, pembeli mendapat tombol untuk membuka akses produk.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="branding">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Full White-Label Branding</div>
+          <h2>Bot, Pesan, dan Landing Page Bisa Pakai Brand Anda</h2>
+          <p>Identitas bot, pesan otomatis, dan halaman panduan bisa disesuaikan agar terlihat seperti sistem milik brand Anda sendiri.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card feature-card">
+            <div class="icon">♙</div>
+            <h3>Ganti Identitas Sepenuhnya</h3>
+            <p>Ubah nama bot, foto profil, dan deskripsi bot langsung dari @BotFather agar tampil seperti bot resmi milik brand Anda.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon purple">◉</div>
+            <h3>Custom Pesan & Copywriting</h3>
+            <p>Edit pesan welcome, instruksi pembayaran, notifikasi, dan gaya bahasa bot melalui Settings atau dashboard.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="icon mint">⌘</div>
+            <h3>Link Sales Page & Deep Link</h3>
+            <p>Masukkan link sales page produk dan copy deep link Telegram bot untuk dipasang di landing page, CTA, atau tombol checkout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="troubleshooting">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Troubleshooting Penting</div>
+          <h2>Kalau Bot Tidak Merespon, Cek Bagian Ini Dulu</h2>
+          <p>Mayoritas masalah biasanya berasal dari deploy belum versi terbaru, webhook salah URL, token salah, Admin ID salah, atau antrean Telegram menumpuk.</p>
+        </div>
+
+        <div class="faq">
+          <details open>
+            <summary>Bot tidak membalas ketika klik Produk Kami</summary>
+            <div class="answer">
+              Pastikan webhook aktif, deployment sudah versi terbaru, dan sheet Products memiliki produk dengan status <b>Active</b> atau <b>Aktif</b>. Gunakan menu <b>Uji Coba: Katalog Produk</b> untuk mengetes katalog langsung ke admin.
+            </div>
+          </details>
+
+          <details>
+            <summary>Bot looping mengirim welcome terus</summary>
+            <div class="answer">
+              Ini biasanya karena pending update Telegram menumpuk. Gunakan menu <b>Reset & Bersihkan Antrean Bot</b>. Fungsi reset idealnya memakai <b>drop_pending_updates=true</b> agar antrian lama dibuang dan tidak diproses ulang.
+            </div>
+          </details>
+
+          <details>
+            <summary>Muncul error 302 Found di webhook</summary>
+            <div class="answer">
+              Gunakan URL deployment yang berakhiran <b>/exec</b>, bukan URL editor Apps Script. Setelah deploy ulang, simpan kembali konfigurasi di Dashboard Admin agar webhook mengarah ke URL yang benar.
+            </div>
+          </details>
+
+          <details>
+            <summary>Muncul error 403 Forbidden</summary>
+            <div class="answer">
+              Biasanya bot diblokir oleh user, Admin ID salah, atau izin Apps Script belum benar. Jalankan <b>Ping Bot</b> untuk memastikan bot bisa mengirim pesan ke admin.
+            </div>
+          </details>
+
+          <details>
+            <summary>Setelah edit source code, bot masih pakai versi lama</summary>
+            <div class="answer">
+              Apps Script tidak otomatis memakai kode terbaru jika deployment belum diperbarui. Klik <b>Deploy → Manage deployments → Edit → Version: New version → Deploy</b>, lalu simpan ulang config webhook.
+            </div>
+          </details>
+
+          <details>
+            <summary>Token bot terlihat atau bocor</summary>
+            <div class="answer">
+              Segera buka <b>@BotFather</b>, pilih bot Anda, lalu gunakan fitur revoke token. Setelah mendapat token baru, masukkan ulang di Dashboard Admin dan aktifkan webhook lagi.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="container">
+        <div class="wide-card split success">
+          <div>
+            <div class="eyebrow">Checklist Final</div>
+            <h2>Sebelum Sistem Dipakai Jualan, Pastikan Ini Sudah Aman</h2>
+            <ul class="list-clean">
+              <li>Bot sudah dibuat dari @BotFather dan token tersimpan di Dashboard.</li>
+              <li>Admin ID sudah benar dan admin menerima pesan test Ping Bot.</li>
+              <li>Web App sudah dideploy dengan akses Anyone.</li>
+              <li>Webhook sudah aktif ke URL /exec terbaru.</li>
+              <li>Sheet Products berisi minimal 1 produk dengan status Active/Aktif.</li>
+              <li>Produk memiliki link file/akses yang benar.</li>
+              <li>Instruksi bank atau QRIS sudah diisi.</li>
+              <li>Menu /admin bisa dibuka oleh admin.</li>
+              <li>Alur checkout, upload bukti, approve order, dan buka akses sudah dites.</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <div class="old">Checklist selesai?</div>
+            <div class="price">Siap <small>Jualan</small></div>
+            <a class="btn btn-primary" href="#top">Kembali ke Atas</a>
+            <p style="margin-top:16px;">Simpan panduan ini sebagai dokumentasi untuk buyer atau tim support Anda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catatan">
+      <div class="container">
+        <div class="grid-2">
+          <article class="card warning">
+            <div class="icon yellow">!</div>
+            <h3>Catatan Penting Saat Deploy</h3>
+            <p>Jika memakai beberapa akun Google di browser yang sama, gunakan mode Incognito saat deploy untuk menghindari konflik akun. Pastikan akun yang deploy sama dengan akun pemilik Google Sheets.</p>
+          </article>
+          <article class="card danger">
+            <div class="icon pink">⚠</div>
+            <h3>Jangan Sebar Token Bot</h3>
+            <p>Token bot adalah kunci akses utama. Jangan ditaruh di halaman publik, screenshot, atau file yang dibagikan. Kalau sudah terlanjur bocor, revoke token dari @BotFather.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a class="brand" href="#top"><span class="brand-icon">✈️</span><span>iMers<b>TeleShip</b></span></a>
+      <span>© 2026 iMersTeleShip. Telegram-Based Digital Commerce System.</span>
+      <span>Developed with ❤️ by Terry Katar | iMersnesia.com</span>
+    </div>
+  </footer>
+
+  <a class="top-link" href="#top" aria-label="Kembali ke atas">↑</a>
+</body>
+</html>
+
