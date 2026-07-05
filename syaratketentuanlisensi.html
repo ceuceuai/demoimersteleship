@@ -8,7 +8,7 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,42 +27,79 @@
     </script>
     
     <style>
-        body { background-color: #f8fafc; color: #334155; }
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(42, 171, 238, 0.15), transparent 30%),
+                radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 32%),
+                linear-gradient(180deg, #f8fafc 0%, #ffffff 45%, #f1f5f9 100%);
+            color: #334155;
+        }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+        .soft-card {
+            box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+        }
+
+        .cta-glow {
+            box-shadow: 0 18px 45px rgba(42, 171, 238, 0.35);
+        }
     </style>
 </head>
+
 <body class="antialiased py-12 px-4 sm:px-6 lg:px-8">
 
     <div class="max-w-3xl mx-auto">
+
         <!-- Logo / Header -->
         <div class="text-center mb-8">
-            <a href="index.html" class="inline-flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
-                <div class="w-10 h-10 bg-gradient-to-br from-tele-500 to-blue-600 rounded-full flex items-center justify-center shadow-md">
-                    <svg class="w-5 h-5 text-white ml-[-2px] mt-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M2.066 10.693l19.5-7.5c1.03-.4 2.112.443 1.83 1.5l-3.5 13.5c-.218.84-1.22 1.158-1.926.608l-5.676-4.42-3.328 3.255c-.267.26-6.95-.506-.412-.41l11.75-10.456-14.73 9.42-.4-5.32c-.104-1.393 1.34-2.186 2.52-1.68h.002z"/></svg>
-                </div>
-                <span class="font-extrabold text-2xl tracking-tight text-slate-800">iMers<span class="text-tele-500">Teleship</span></span>
+            <a href="index.html" class="inline-flex items-center gap-3 mb-5 hover:opacity-90 transition-opacity">
+                <img 
+                    src="URL_LOGO_IMERSTELESHIP_ANDA" 
+                    alt="Logo iMersTeleship" 
+                    class="w-11 h-11 rounded-2xl object-contain shadow-md bg-white p-1"
+                >
+                <span class="font-extrabold text-2xl tracking-tight text-slate-800">
+                    iMers<span class="text-tele-500">Teleship</span>
+                </span>
             </a>
-            <h1 class="text-3xl font-black text-slate-900 tracking-tight">📜 Syarat & Ketentuan Lisensi</h1>
-            <p class="text-slate-500 mt-3 font-medium text-sm sm:text-base">Pembaruan Terakhir: Juli 2026</p>
+
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-slate-200 rounded-full px-4 py-2 mb-5 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-tele-500"></span>
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Dokumen Lisensi Resmi</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                📜 Syarat & Ketentuan Lisensi
+            </h1>
+
+            <p class="text-slate-500 mt-3 font-medium text-sm sm:text-base">
+                Pembaruan Terakhir: Juli 2026
+            </p>
         </div>
 
         <!-- Document Content -->
-        <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 sm:p-10 border border-slate-100">
+        <div class="bg-white rounded-3xl soft-card p-6 sm:p-10 border border-slate-100">
             
             <p class="text-slate-600 mb-8 leading-relaxed font-medium">
-                Terima kasih telah mempercayakan <b>iMersTeleship</b> sebagai fondasi bisnis digital Anda. Dengan melakukan pembelian dan mengunduh <i>source code</i> ini, Anda dianggap telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan di bawah ini:
+                Terima kasih telah mempercayakan <b>iMersTeleship</b> sebagai fondasi bisnis digital Anda. 
+                Dengan melakukan pembelian dan mengunduh <i>source code</i> ini, Anda dianggap telah membaca, memahami, 
+                dan menyetujui seluruh syarat dan ketentuan di bawah ini:
             </p>
 
             <div class="space-y-8">
+
                 <!-- Poin 1 -->
                 <div>
                     <h2 class="text-xl font-bold text-slate-800 mb-3 flex items-start gap-2">
                         <span class="text-tele-500">1.</span> Sistem "Jual Putus" (As-Is)
                     </h2>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-                        Produk ini dijual dengan sistem jual putus berupa <i>Source Code</i> beserta struktur database-nya. Kami menjamin bahwa kode bawaan (asli) yang kami berikan telah melalui uji coba ketat dan berfungsi 100% normal pada lingkungan standar (Google Apps Script).
+                        Produk ini dijual dengan sistem jual putus berupa <i>Source Code</i> beserta struktur database-nya. 
+                        Kami menjamin bahwa kode bawaan (asli) yang kami berikan telah melalui uji coba ketat dan berfungsi 
+                        100% normal pada lingkungan standar (Google Apps Script).
                     </p>
                 </div>
 
@@ -72,7 +109,10 @@
                         <span class="text-tele-500">2.</span> Modifikasi Kode
                     </h2>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-                        Anda diberikan kebebasan penuh untuk memodifikasi kode milik Anda sesuai dengan keahlian pemrograman Anda. <b>NAMUN</b>, apabila terjadi <i>error</i>, <i>bug</i>, atau sistem berhenti berfungsi (<i>crash</i>) yang disebabkan oleh modifikasi kode atau kelalaian setup oleh pihak Anda, hal tersebut <b>sepenuhnya di luar tanggung jawab kami</b>. Kami tidak wajib memperbaiki kode yang sudah Anda ubah/rombak.
+                        Anda diberikan kebebasan penuh untuk memodifikasi kode milik Anda sesuai dengan keahlian pemrograman Anda. 
+                        <b>NAMUN</b>, apabila terjadi <i>error</i>, <i>bug</i>, atau sistem berhenti berfungsi (<i>crash</i>) 
+                        yang disebabkan oleh modifikasi kode atau kelalaian setup oleh pihak Anda, hal tersebut 
+                        <b>sepenuhnya di luar tanggung jawab kami</b>. Kami tidak wajib memperbaiki kode yang sudah Anda ubah/rombak.
                     </p>
                 </div>
 
@@ -84,11 +124,12 @@
                     <div class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Dukungan teknis / bantuan hanya mencakup:
                         <ul class="list-disc list-inside mt-2 space-y-2 ml-2">
-                            <li>Panduan instalasi awal (jika Anda mengalami kendala saat mengikuti panduan resmi tanpa modifikasi).</li>
+                            <li>Panduan instalasi awal jika Anda mengalami kendala saat mengikuti panduan resmi tanpa modifikasi.</li>
                             <li>Laporan <i>bug</i> pada versi asli yang murni berasal dari <i>source code</i> bawaan kami.</li>
                         </ul>
-                        <p class="mt-2 text-rose-600 font-medium bg-rose-50 p-3 rounded-lg border border-rose-100">
-                            Kami <b>tidak melayani</b> konsultasi koding gratis untuk membantu Anda merombak fitur <i>custom</i>. Jika Anda membutuhkan fitur tambahan, silakan hubungi kami untuk layanan Jasa Custom Koding (Berbayar).
+                        <p class="mt-3 text-rose-600 font-medium bg-rose-50 p-4 rounded-xl border border-rose-100">
+                            Kami <b>tidak melayani</b> konsultasi koding gratis untuk membantu Anda merombak fitur <i>custom</i>. 
+                            Jika Anda membutuhkan fitur tambahan, silakan hubungi kami untuk layanan Jasa Custom Koding Berbayar.
                         </p>
                     </div>
                 </div>
@@ -99,7 +140,9 @@
                         <span class="text-tele-500">4.</span> Lisensi White-Label
                     </h2>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-                        Anda diizinkan penuh untuk me-<i>rebranding</i> bot ini (mengubah nama, logo, gaya bahasa bot, dan tampilan Landing Page) menjadi identitas bisnis atau agensi Anda sendiri untuk berjualan produk Anda. Anda memiliki hak kebebasan 100% untuk mengatur harga jual produk/layanan di dalam bot Anda sendiri.
+                        Anda diizinkan penuh untuk me-<i>rebranding</i> bot ini, termasuk mengubah nama, logo, gaya bahasa bot, 
+                        dan tampilan landing page menjadi identitas bisnis atau agensi Anda sendiri untuk berjualan produk Anda. 
+                        Anda memiliki hak kebebasan 100% untuk mengatur harga jual produk/layanan di dalam bot Anda sendiri.
                     </p>
                 </div>
 
@@ -109,10 +152,16 @@
                         <span class="text-tele-500">5.</span> Aturan Agensi & Larangan Keras PLR / MRR
                     </h2>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base mb-3">
-                        Anda <b>DILARANG KERAS</b> mendistribusikan, membagikan gratis, ataupun menjual kembali <i>source code</i> mentah ini kepada pihak ketiga dalam bentuk apapun (Sistem ini <b>TIDAK BOLEH</b> dijadikan produk PLR / MRR).
+                        Anda <b>DILARANG KERAS</b> mendistribusikan, membagikan gratis, ataupun menjual kembali 
+                        <i>source code</i> mentah ini kepada pihak ketiga dalam bentuk apapun. Sistem ini 
+                        <b>TIDAK BOLEH</b> dijadikan produk PLR / MRR.
                     </p>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base bg-amber-50 p-4 rounded-xl border border-amber-100">
-                        Hak akses dan modifikasi <i>source code</i> ini eksklusif <b>hanya untuk Anda</b>. Jika Anda ingin menjual sistem ini kepada member / klien Anda, Anda hanya diizinkan bertindak sebagai <b>Agensi (Jasa Setup Terima Beres)</b>. Member / Klien Anda <b>HANYA</b> boleh menggunakan file googlesheet anda yang sudah jadi, dan <b>DILARANG</b> merubah hasil rebrand kode anda.User Anda hnaya Sebgai End User
+                        Hak akses dan modifikasi <i>source code</i> ini eksklusif <b>hanya untuk Anda</b>. 
+                        Jika Anda ingin menjual sistem ini kepada member / klien Anda, Anda hanya diizinkan bertindak sebagai 
+                        <b>Agensi (Jasa Setup Terima Beres)</b>. Member / klien Anda <b>HANYA</b> boleh menggunakan file 
+                        Google Sheets Anda yang sudah jadi, dan <b>DILARANG</b> mengubah hasil rebrand kode Anda. 
+                        User Anda hanya sebagai <b>End User</b>.
                     </p>
                 </div>
 
@@ -122,16 +171,33 @@
                         <span class="text-tele-500">6.</span> Lepas Tanggung Jawab Pelanggan Akhir (End-User)
                     </h2>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-                        Kami sebagai Developer Asli tidak memiliki ikatan, hubungan, maupun tanggung jawab hukum dan finansial apapun terhadap <i>member</i> / pelanggan di toko Anda. Segala komplain, layanan pelanggan, tuntutan <i>refund</i>, atau kendala transaksi yang dialami oleh pelanggan Anda <b>sepenuhnya merupakan tanggung jawab Anda</b> sebagai pemilik <i>brand</i> agensi tersebut.
+                        Kami sebagai Developer Asli tidak memiliki ikatan, hubungan, maupun tanggung jawab hukum dan finansial 
+                        apapun terhadap <i>member</i> / pelanggan di toko Anda. Segala komplain, layanan pelanggan, tuntutan 
+                        <i>refund</i>, atau kendala transaksi yang dialami oleh pelanggan Anda 
+                        <b>sepenuhnya merupakan tanggung jawab Anda</b> sebagai pemilik <i>brand</i> agensi tersebut.
                     </p>
                 </div>
             </div>
 
             <hr class="border-slate-200 my-8">
 
-            <div class="bg-slate-50 p-5 rounded-2xl text-center">
-                <p class="text-slate-500 text-xs sm:text-sm italic font-medium">
-                    "Dengan beroperasinya bot Anda menggunakan source code ini, Anda menyetujui membebaskan Developer asli dari segala tuntutan kerugian teknis maupun finansial yang diakibatkan oleh penggunaan sistem."
+            <div class="bg-slate-50 p-5 rounded-2xl text-center border border-slate-100">
+                <p class="text-slate-500 text-xs sm:text-sm italic font-medium leading-relaxed">
+                    "Dengan beroperasinya bot Anda menggunakan source code ini, Anda menyetujui membebaskan Developer asli 
+                    dari segala tuntutan kerugian teknis maupun finansial yang diakibatkan oleh penggunaan sistem."
+                </p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-8">
+                <a 
+                    href="#" 
+                    class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-tele-500 to-blue-600 hover:from-tele-600 hover:to-blue-700 text-white font-extrabold px-8 py-4 rounded-2xl transition-all duration-300 cta-glow hover:-translate-y-1"
+                >
+                    🚀 Yakin Saya Beli
+                </a>
+                <p class="text-xs text-slate-400 mt-3 font-medium">
+                    Dengan klik tombol ini, Anda menyatakan telah membaca dan menyetujui syarat lisensi.
                 </p>
             </div>
         </div>
@@ -139,10 +205,25 @@
         <!-- Back to Home -->
         <div class="text-center mt-10">
             <a href="index.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-tele-600 font-bold transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
                 Kembali ke Halaman Utama
             </a>
         </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-10 pb-4">
+            <p class="text-xs sm:text-sm text-slate-400 font-semibold">
+                iMersTeleship developed by 
+                <span class="text-slate-600">Terry Katar</span> 
+                | 
+                <a href="https://imersnesia.com" target="_blank" rel="noopener" class="text-tele-500 hover:text-tele-600 transition-colors">
+                    iMersnesia.com
+                </a>
+            </p>
+        </footer>
+
     </div>
 
 </body>
