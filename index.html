@@ -108,6 +108,7 @@
                 <!-- Links -->
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#fitur" class="text-sm font-bold text-slate-600 hover:text-tele-500 transition">Fitur Utama</a>
+                    <a href="#review" class="text-sm font-bold text-slate-600 hover:text-tele-500 transition">Review</a>
                     <a href="#deeplink" class="text-sm font-bold text-slate-600 hover:text-tele-500 transition">Deep Link</a>
                     <a href="#bonus" class="text-sm font-bold text-slate-600 hover:text-tele-500 transition">Bonus</a>
                     <a href="#harga" class="text-sm font-bold text-slate-600 hover:text-tele-500 transition">Harga</a>
@@ -219,6 +220,55 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Review / Demo Video Section -->
+    <section id="review" class="py-20 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-tele-600 font-extrabold tracking-widest uppercase text-sm mb-3">Review & Demo Sistem</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">Lihat Cara iMersTeleship Bekerja</h3>
+                <p class="text-slate-600 mt-5 max-w-2xl mx-auto font-medium leading-relaxed">
+                    Tonton video review atau demo singkat untuk melihat bagaimana alur katalog produk, checkout, pembayaran manual, dan akses produk berjalan langsung dari Telegram Bot.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-[3rem] p-4 md:p-6 shadow-2xl shadow-blue-900/5 border border-slate-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-tele-200 to-purple-200 rounded-full filter blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-emerald-200 to-blue-200 rounded-full filter blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+
+                <div class="relative z-10 rounded-[2rem] overflow-hidden bg-slate-900 shadow-xl border border-slate-200">
+                    <div class="aspect-video w-full">
+                        <!-- GANTI BAGIAN IFRAME DI BAWAH INI DENGAN EMBED VIDEO YOUTUBE ANDA -->
+                        <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/GANTI_VIDEO_ID" 
+                            title="Review dan Demo iMersTeleship" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="relative z-10 mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
+                        <h4 class="font-black text-slate-800 mb-1">Alur Pembeli</h4>
+                        <p class="text-sm text-slate-500 font-medium leading-relaxed">Mulai dari klik bot, lihat katalog, pilih produk, sampai checkout.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
+                        <h4 class="font-black text-slate-800 mb-1">Alur Admin</h4>
+                        <p class="text-sm text-slate-500 font-medium leading-relaxed">Order masuk, bukti transfer diterima, lalu akses produk dibuka.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-100 rounded-2xl p-5">
+                        <h4 class="font-black text-slate-800 mb-1">Setup Sistem</h4>
+                        <p class="text-sm text-slate-500 font-medium leading-relaxed">Google Sheets, Apps Script, dan Telegram Bot bekerja dalam satu alur.</p>
                     </div>
                 </div>
             </div>
@@ -503,10 +553,15 @@
     <!-- Footer -->
     <footer class="border-t border-slate-200 bg-white/50 backdrop-blur-md mt-10 relative z-10">
         <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <svg class="w-6 h-6 text-tele-500" fill="currentColor" viewBox="0 0 24 24"><path d="M2.066 10.693l19.5-7.5c1.03-.4 2.112.443 1.83 1.5l-3.5 13.5c-.218.84-1.22 1.158-1.926.608l-5.676-4.42-3.328 3.255c-.267.26-6.95-.506-.412-.41l11.75-10.456-14.73 9.42-.4-5.32c-.104-1.393 1.34-2.186 2.52-1.68h.002z"/></svg>
+            <a href="#" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+                <!-- GANTI src DI BAWAH DENGAN URL LOGO ICON / LOGO IMERSTELESHIP ANDA -->
+                <img 
+                    src="URL_LOGO_IMERSTELESHIP_ANDA" 
+                    alt="Logo iMersTeleship" 
+                    class="w-7 h-7 object-contain rounded-lg"
+                >
                 <span class="font-black text-slate-800 text-lg">iMers<span class="text-tele-500">Teleship</span></span>
-            </div>
+            </a>
             <p class="text-slate-500 font-medium text-sm text-center md:text-left">
                 © 2026 iMersTeleship. All rights reserved. <br class="md:hidden"> Telegram-Based Digital Commerce System.
             </p>
