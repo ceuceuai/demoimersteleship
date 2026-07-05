@@ -289,7 +289,7 @@
         </div>
     </section>
 
-    <!-- Deep Link & Sales Page Section -->
+    <!-- Deep Link & Sales Page Section (Updated) -->
     <section id="deeplink" class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="bg-slate-900 rounded-[3rem] overflow-hidden relative shadow-2xl shadow-slate-900/20">
@@ -298,11 +298,30 @@
 
                 <div class="relative z-10 p-8 md:p-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
-                        <span class="bg-white/10 text-tele-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block">Sales Page & Deep Link</span>
+                        <!-- FIXED: Subheadline color changed to be bright and highly visible against dark background -->
+                        <span class="bg-tele-500/20 text-tele-300 border border-tele-500/30 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block">Sales Page & Deep Link</span>
                         <h3 class="text-3xl md:text-5xl font-black text-white mb-5 leading-tight">Produk Bisa Dibawa ke Sales Page atau Langsung Checkout ke Bot</h3>
-                        <p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
+                        <p class="text-slate-300 text-base md:text-lg leading-relaxed font-medium mb-8">
                             Setiap produk bisa dibuat lebih fleksibel: arahkan pembeli ke halaman sales page dulu, atau langsung ke bot Telegram menggunakan deep link khusus produk. Cocok untuk dipasang di landing page, iklan, bio, katalog, atau tombol checkout.
                         </p>
+                        
+                        <!-- ADDED: Gmail Info Box Moved Here -->
+                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row gap-4 items-start transform transition hover:-translate-y-1 duration-300">
+                            <div class="bg-amber-500/20 p-3 rounded-full shrink-0">
+                                <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-amber-400 font-bold mb-2 text-lg">💡 Info Penting Persiapan Server</h4>
+                                <p class="text-amber-100/80 text-sm font-medium leading-relaxed">
+                                    Kami sangat menyarankan Anda menyiapkan <b>1 Akun Gmail Khusus (Baru)</b> untuk menginstal sistem ini. Hal ini bertujuan untuk:
+                                </p>
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-sm text-amber-100/80 font-medium ml-2">
+                                    <li>Mencegah error bentrok akun saat proses instalasi Server (Error 302).</li>
+                                    <li>Memastikan kuota harian server Google Anda 100% utuh murni untuk transaksi bot.</li>
+                                    <li>Memudahkan Anda jika kelak ingin menjual kembali / memindahtangankan aset bisnis bot ini ke pihak lain.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 gap-4">
